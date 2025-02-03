@@ -12,7 +12,7 @@ module ClientSearch
       @path = path
     end
 
-    def process(params: {})
+    def parse(params: {})
       raise ClientSearch::EmptyString if params.empty? && params.is_a?(String)
 
       names = []
