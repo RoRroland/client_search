@@ -24,4 +24,4 @@ else
   puts "Email that has duplicate : #{JSON.pretty_generate(emails)}"
 end
 
-puts "--- Application is terminated! Thanks! ---"
+puts "--- Application is terminated! Thank you for using the service. ---"
