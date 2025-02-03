@@ -1,26 +1,27 @@
 #!/usr/bin/env ruby
 
 require 'json'
+require 'fileutils'
+
 require_relative '../lib/client_search.rb'
 
-path = '../lib/data/clients.json'
-puts 'Enter Partial or Full Name to search for clients: '
+APP_ROOT = File.expand_path('..', __dir__)
 
-full_name = gets.chomp
+path = "#{APP_ROOT}/lib/data/clients.json"
 
-result = ClientSearch.process(path:).parse(params: { full_name: }).names
-
-puts "Result : #{JSON.pretty_generate(result)}"
-
-puts 'Do you want to show duplicate email(s)? '
-
+puts 'Do you want to search for clients by Name? (yes/no)'
 answer = gets.chomp
-if answer&.downcase != 'yes'
-  puts 'You have not answered: `Yes`. Application is terminated! Thanks!'
-  exit
+if answer&.downcase == 'yes'
+  puts 'Enter Partial or Full Name to search for clients: '
+
+  full_name = gets.chomp
+  result = ClientSearch.process(path:).parse(params: { full_name: }).names
+  puts "Result : #{JSON.pretty_generate(result)}"
+else
+  puts 'You are checking for duplicate email(s).'
+
+  emails = ClientSearch.process(path:).parse.emails
+  puts "Email that has duplicate : #{JSON.pretty_generate(emails)}"
 end
 
-emails = ClientSearch.parse(path:).process.emails
-puts "Email that has duplicate : #{JSON.pretty_generate(emails)}"
-
-puts "Test commit---"
+puts "--- Application is terminated! Thanks! ---"
