@@ -19,7 +19,7 @@ module ClientSearch
   class EmptyString < ClientSearch::Exception
   end
 
-  def self.parse(path:)
+  def self.process(path:)
     ClientSearch::Json.new(path:)
   end
 end
