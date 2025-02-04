@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.version     = ClientSearch::VERSION
   s.authors     = ['Rolando Alvarado']
   s.email       = ['rorroland@gmail.com']
-  s.homepage    = 'https://github.com/rolandoalvarado/client_search'
+  s.homepage    = 'https://github.com/RoRroland/client_search.git'
   s.summary     = %q{Process clients data from a file.}
   s.description = %q{ClientSearch is a simple code for parsing a clients data from a file with search capabilty for partial or full name and showing of duplicate email if there are.}
 
