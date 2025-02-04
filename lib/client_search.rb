@@ -11,11 +11,11 @@ module ClientSearch
   class FileNotFound < ClientSearch::Exception
   end
 
-  # Exception that is raised if path is empty.
+  # Exception that is raised if path is missing.
   class PathMissing < ClientSearch::Exception
   end
 
-  # Exception that is raised if param is an empty string.
+  # Exception that is raised if path is an empty string.
   class EmptyString < ClientSearch::Exception
   end
 
