@@ -50,15 +50,15 @@ Result : [
 ]
 --- Application is terminated! Thank you for using the service. ---
 ```
-4. Showing of duplicate email(s).
+3. Showing of duplicate email(s).
 ```
 Do you want to search for clients by Name? (yes/no)
 no
-You are checking for duplicate email(s).
+Do you want to check for duplicate email?
+yes
 Email that has duplicate : [
   "jane.smith@yahoo.com"
 ]
---- Application is terminated! Thank you for using the service. ---
 ```
 
 Running the test:
