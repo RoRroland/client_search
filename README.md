@@ -66,6 +66,11 @@ Running the test:
 rake test
 ```
 
+Check for syntax error:
+```
+bundle exec rubocop
+```
+
 ## License
 
 See [LICENSE](LICENSE) for details.

@@ -1,4 +1,5 @@
-# encoding: UTF-8
+# frozen_string_literal: true
+
 require 'rbconfig'
 require 'client_search'
 
@@ -11,5 +12,5 @@ end
 
 RSpec.configure do |config|
   config.include(FileHelpers)
-  config.filter_run_excluding :windows => true if RbConfig::CONFIG['host_os'].match(/mswin|mingw|cygwin/) == nil
+  config.filter_run_excluding(windows: true) if RbConfig::CONFIG['host_os'].match(/mswin|mingw|cygwin/).nil?
 end

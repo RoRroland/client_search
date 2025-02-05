@@ -1,0 +1,59 @@
+AllCops:
+  NewCops: enable
+  Exclude:
+    - "bin/*"
+    - "client_search.gemspec"
+    - "Gemfile"
+    - "lib/data/*"
+    - "Rakefile.rb"
+Gemspec/RequireMFA:
+  Enabled: false
+Layout/SpaceBeforeBlockBraces:
+  Enabled: true
+  EnforcedStyle: space
+  EnforcedStyleForEmptyBraces: space
+Lint/UselessAccessModifier:
+  Enabled: true
+  ContextCreatingMethods: []
+  MethodCreatingMethods: []
+Metrics/AbcSize:
+  Enabled: false
+  Max: 15
+Metrics/BlockLength:
+  Enabled: false
+  CountComments: false
+  Max: 25
+  AllowedMethods:
+    - refine
+Metrics/ClassLength:
+  Enabled: false
+  CountComments: false
+  Max: 100
+Metrics/CyclomaticComplexity:
+  Enabled: false
+  Max: 6
+Metrics/MethodLength:
+  Enabled: false
+  CountComments: false
+  Max: 10
+Metrics/PerceivedComplexity:
+  Enabled: false
+  Max: 7
+Style/Documentation:
+  Enabled: false
+Style/ModuleFunction:
+  Enabled: true
+  EnforcedStyle: module_function
+Style/MutableConstant:
+  Enabled: false
+Style/PercentLiteralDelimiters:
+  Enabled: true
+  PreferredDelimiters:
+    default: ()
+    '%i': '()'
+    '%I': '()'
+    '%r': '{}'
+    '%w': '()'
+    '%W': '()'
+Style/OpenStructUse:
+  Enabled: false

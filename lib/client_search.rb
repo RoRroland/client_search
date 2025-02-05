@@ -1,8 +1,9 @@
-require_relative 'client_search/json.rb'
+# frozen_string_literal: true
+
+require_relative 'client_search/json'
+require_relative 'client_search/version'
 
 module ClientSearch
-  extend self
-
   # Default exception class for ClientSearch.
   class Exception < ::StandardError
   end

@@ -18,10 +18,13 @@ if answer&.downcase == 'yes'
   result = ClientSearch.process(path:).parse(params: { full_name: }).names
   puts "Result : #{JSON.pretty_generate(result)}"
 else
-  puts 'You are checking for duplicate email(s).'
-
-  emails = ClientSearch.process(path:).parse.emails
-  puts "Email that has duplicate : #{JSON.pretty_generate(emails)}"
+  puts 'Do you want to check for duplicate email?'
+  answer = gets.chomp
+  if answer&.downcase == 'yes'
+    emails = ClientSearch.process(path:).parse.emails
+    puts "Email that has duplicate : #{JSON.pretty_generate(emails)}"
+  end
+  exit
 end
 
-puts "--- Application is terminated! Thank you for using the service. ---"
+puts '--- Application is terminated! Thank you for using the service. ---'

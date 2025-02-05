@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'json'
 require 'ostruct'
 
@@ -7,7 +9,7 @@ module ClientSearch
 
     def initialize(path:)
       raise ClientSearch::PathMissing if path.nil?
-      raise ClientSearch::FileNotFound unless File.exists?(path)
+      raise ClientSearch::FileNotFound unless File.exist?(path)
 
       @path = path
     end
@@ -18,7 +20,7 @@ module ClientSearch
       names = []
       emails = []
       file = File.read(path)
-      search_string = params[params.keys.first.to_sym] if params && params.keys.any?
+      search_string = params[params.keys.first.to_sym] if params&.keys&.any?
 
       json_data(file:).each do |data|
         data.map do |key, value|
